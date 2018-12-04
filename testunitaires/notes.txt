@@ -1,0 +1,21 @@
+Ajouter junit5 + reporting maven + hamcrest
+
+Hamcrest, trop de la boulette, mais attention au shadowing sur les imports (JUnit 5 propose des éléments du même nom que hamcrest)
+
+
+cobertura
+jacoco
+
+
+
+
+
+Dans SonarQube, générer un token de sécurité pour permettre d'authenfier jenkins : 
+jenkins-token: c6d0d53e552cc3313e26a9884c4b8058dc079e33
+
+Commande générée pour que maven analyse le code et pousse les résultats dans sonarqube : 
+mvn sonar:sonar \
+  -Dsonar.host.url=http://localhost:9000 \
+  -Dsonar.login=c6d0d53e552cc3313e26a9884c4b8058dc079e33
+  
+On peut ensuite sélectionner des règles ou créer son propre profile. 
